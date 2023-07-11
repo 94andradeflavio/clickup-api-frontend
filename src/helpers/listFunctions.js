@@ -14,7 +14,7 @@ export async function searchAndSave(listName) {
       Nome: task.name,
       Objeto: '',
       Diretoria: '',
-      Gestao: task,
+      Gestao: task.list.name,
       Responsavel: task.assignees.map((assignee) => assignee.username || assignee.email).join(', '),
       DataInicio: task.start_date ? formatDate(new Date(parseInt(task.start_date))) : '',
       DataFim: task.due_date ? formatDate(new Date(parseInt(task.due_date))) : '',
