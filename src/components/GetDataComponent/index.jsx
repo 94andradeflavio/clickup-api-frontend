@@ -5,9 +5,12 @@ import { searchAndSave } from '../../helpers/listFunctions';
 
 function GetDataComponent() {
   const [listName, setListName] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleClickButton = () => {
-    searchAndSave(listName);
+  const handleClickButton = async () => {
+    setLoading(true);
+    await searchAndSave(listName);
+    setLoading(false);
   };
 
   return (
@@ -29,7 +32,9 @@ function GetDataComponent() {
           <p>
             Esteira selecionada: <span>{listName}</span>. Clique em &quot;Baixar relatório&quot;.
           </p>
-          <button onClick={handleClickButton}>Baixar relatório</button>
+          <button className={loading ? 'loading' : ''} onClick={handleClickButton}>
+            Baixar relatório
+          </button>
         </>
       )}
     </div>
