@@ -20,6 +20,7 @@ function GetDataComponent() {
           </option>
           <option value="janaina">Janaína</option>
           <option value="sandra">Sandra</option>
+          <option value="todos">Todos</option>
         </select>
       </div>
 
