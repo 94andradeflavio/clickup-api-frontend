@@ -18,9 +18,9 @@ function GetDataComponent() {
           <option value="selecionar" disabled>
             -
           </option>
-          <option value="janaina">Janaína</option>
-          <option value="sandra">Sandra</option>
-          <option value="todos">Todos</option>
+          <option value="janaina">JANAÍNA</option>
+          <option value="sandra">SANDRA</option>
+          <option value="todos">TODOS</option>
         </select>
       </div>
 
