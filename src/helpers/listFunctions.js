@@ -11,6 +11,7 @@ export async function searchAndSave(listName) {
     const tasks = await axios.get(`${serverUrl}/${listName}`);
 
     const data = await tasks.data.map((task) => ({
+      ID: task.id,
       Nome: task.name,
       Objeto: '',
       Diretoria: '',
