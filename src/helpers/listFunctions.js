@@ -2,6 +2,7 @@ import axios from 'axios';
 
 import { generateExcelFile } from './generateExcelFile';
 import { formatDate } from './formatDate';
+import { getDescriptionNameByPosition } from './getDescriptionNames';
 
 const serverUrl = 'https://clickup-api-backend.onrender.com';
 // const serverUrl = 'http://localhost:3333';
@@ -13,8 +14,8 @@ export async function searchAndSave(listName) {
     const data = await tasks.data.map((task) => ({
       ID: task.id,
       Nome: task.name,
-      Objeto: '',
-      Diretoria: '',
+      Objeto: getDescriptionNameByPosition(task.description, 2),
+      Diretoria: getDescriptionNameByPosition(task.description, 1),
       Esteira: task.list.name,
       Criador: task.creator.username || task.creator.email,
       Responsavel: task.assignees.map((assignee) => assignee.username || assignee.email).join(', '),
